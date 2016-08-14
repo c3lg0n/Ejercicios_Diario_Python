@@ -42,7 +42,7 @@ def longitud(variable):
 #Escribir una función que tome un carácter y devuelva True si es una vocal, de lo contrario devuelve False.
 
 def aeiou(caracter):
-    if caracter == "a" or caracter == "e" or caracter == "i" or caracter == "o" or caracter == "u" caracter == "A" caracter == "E" caracter == "I" caracter == "O" caracter == "U":
+    if caracter == "a" or caracter == "e" or caracter == "i" or caracter == "o" or caracter == "u" or caracter == "A" or caracter == "E" or caracter == "I" or caracter == "O" or caracter == "U":
         return True
     else:
         return False
@@ -117,3 +117,27 @@ def procedimiento(lista):
         print(num * "*")
 
 #procedimiento((1,4,2,6))
+
+#Ejercicio 11
+#La función max() del ejercicio 1 (primera parte) y la función max_de_tres() del ejercicio 2 (primera parte), solo van a funcionar para 2 o 3 números. Supongamos que tenemos mas de 3 números o no sabemos cuantos números son. Escribir una función max_in_list() que tome una lista de números y devuelva el mas grande.
+
+def max_in_list(lst):
+    alto = 0
+    for i in lst:
+        if i > alto:
+            alto = i
+    return alto
+
+#print(max_in_list((1,2,41,2,7,6,0)))
+
+#Ejercicio 12
+#Escribir una función mas_larga() que tome una lista de palabras y devuelva la mas larga.
+
+def mas_larga(lst):
+    larga = ""
+    for word in lst:
+        if longitud(word) > longitud(larga):
+            larga = word
+    return larga
+
+print(mas_larga(("hola", "celis", "miercoles", "mañana")))
