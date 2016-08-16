@@ -140,4 +140,65 @@ def mas_larga(lst):
             larga = word
     return larga
 
-print(mas_larga(("hola", "celis", "miercoles", "mañana")))
+#print(mas_larga(("hola", "celis", "miercoles", "mañana")))
+
+#Ejercicio 13
+#Escribir una función filtrar_palabras() que tome una lista de palabras y un entero n, y devuelva las palabras que tengan mas de n caracteres.
+
+def filtrar_palabras(lst, n):
+    filtradas = []
+    for word in lst:
+        if longitud(word) > n:
+            filtradas.append(word)
+    return filtradas
+
+#print(filtrar_palabras(("hola","uno","yo","tres"), 12))
+
+#Ejercicio 14
+#Escribir un programa que le diga al usuario que ingrese una cadena. El programa tiene que evaluar la cadena y decir cuantas letras mayúsculas tiene.
+
+def evaluar_cadena():
+    cadena = input("Ingrese el texto: ")
+    mayus = 0
+    for caracter in cadena:
+        if caracter.isupper():
+            mayus += 1
+    return mayus
+
+#print(evaluar_cadena())
+
+#Ejercicio 15
+#Construir un pequeño programa que convierta números binarios en enteros.
+
+def binToDec(binario):
+    binario = inversa(str(binario))
+    exp = 0
+    result = 0
+    for i in binario:
+        i = int(i)
+        result = result + (i * (2 ** exp))
+        exp += 1
+    return result
+
+#print(binToDec(1101110011100101100))
+
+#Ejercicio 16
+#Escribir un pequeño programa donde:
+#- Se ingresa el año en curso.
+#- Se ingresa el nombre y el año de nacimiento de tres personas.
+#- Se calcula cuántos años cumplirán durante el año en curso.
+#- Se imprime en pantalla.
+
+def edad():
+    actual = int(input("Ingresa el año actual: "))
+    conteo = 0
+    while conteo < 3:
+        nombre = input("Escribe tu nombre: ")
+        nacimiento = int(input("Escribe tu año de nacimiento: "))
+        edad = actual - nacimiento
+        print(nombre, ", cumplirás este año ", edad, " años.")
+        conteo += 1
+#edad()
+
+#Ejercicio 7
+#Definir una tupla con 10 edades de personas. Imprimir la cantidad de personas con edades superiores a 20. Puedes variar el ejercicio para que sea el usuario quien ingrese las edades.
