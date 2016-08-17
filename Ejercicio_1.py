@@ -200,5 +200,21 @@ def edad():
         conteo += 1
 #edad()
 
-#Ejercicio 7
+#Ejercicio 17
 #Definir una tupla con 10 edades de personas. Imprimir la cantidad de personas con edades superiores a 20. Puedes variar el ejercicio para que sea el usuario quien ingrese las edades.
+
+def edades():
+    conteo = 1
+    edads = []
+    while conteo <= 10:
+        ingreso = input("Ingresa edad {0}:\n".format(conteo))
+        edads.insert(conteo - 1, str(ingreso))
+        conteo += 1
+    edads = tuple(edads)
+    mayor_edad = 0
+    for i in edads:
+        if int(i) > 20:
+            mayor_edad += 1
+    return mayor_edad
+
+print(edades())
