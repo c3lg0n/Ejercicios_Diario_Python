@@ -217,4 +217,62 @@ def edades():
             mayor_edad += 1
     return mayor_edad
 
-print(edades())
+#print(edades())
+
+#Ejercicio 18
+#Definir una lista con un conjunto de nombres, imprimir la cantidad de comienzan con la letra a. También se puede hacer elegir al usuario la letra a buscar.  (Un poco mas emocionante)
+
+def lstNm():
+    seguir = "S"
+    lista = []
+    while seguir == "S":
+        entrada = input("Ingrese un nombre:\n")
+        lista.append(entrada)
+        seguir = input("¿Desea ingresa otro nombre?(S/N): ")
+    return lista
+
+def concurrencia(lista):
+    letra = input("Elija la letra a buscar: ").upper()
+    igual = 0
+    for i in lista:
+        if i[0].upper() == letra:
+            igual += 1
+    return igual
+
+#print(concurrencia(lstNm()))
+
+#Ejercicio 19
+#Crear una función contar_vocales(), que reciba una palabra y cuente cuantas letras "a" tiene, cuantas letras "e" tiene y así hasta completar todas las vocales. Se puede hacer que el usuario sea quien elija la palabra.
+
+def contar_vocales(palabra = input("Escriba una palabra:\n")):
+    a = 0
+    e = 0
+    i = 0
+    o = 0
+    u = 0
+    for letra in palabra:
+        if letra == "a" or letra == "A":
+            a += 1
+        elif letra == "e" or letra == "E":
+            e += 1
+        elif letra == "i" or letra == "I":
+            i += 1
+        elif letra == "o" or letra == "O":
+            o += 1
+        elif letra == "u" or letra == "U":
+            u += 1
+    if a > 0:
+        print("Hay {0} 'a'".format(a))
+    if e > 0:
+        print("Hay {0} 'e'".format(e))
+    if i > 0:
+        print("Hay {0} 'i'".format(i))
+    if o > 0:
+        print("Hay {0} 'o'".format(o))
+    if u > 0:
+        print("Hay {0} 'u'".format(u))
+
+contar_vocales()
+
+#Ejercicio 20
+#Escriba una función es_bisiesto() que determine si un año determinado es un año bisiesto.Un año bisiesto es divisible por 4, pero no por 100. También es divisible por 400
