@@ -244,7 +244,7 @@ def concurrencia(lista):
 #Ejercicio 19
 #Crear una función contar_vocales(), que reciba una palabra y cuente cuantas letras "a" tiene, cuantas letras "e" tiene y así hasta completar todas las vocales. Se puede hacer que el usuario sea quien elija la palabra.
 
-def contar_vocales(palabra = input("Escriba una palabra:\n")):
+def contar_vocales(palabra):
     a = 0
     e = 0
     i = 0
@@ -272,7 +272,21 @@ def contar_vocales(palabra = input("Escriba una palabra:\n")):
     if u > 0:
         print("Hay {0} 'u'".format(u))
 
-contar_vocales()
+#contar_vocales(input("Escriba una palabra:\n"))
 
 #Ejercicio 20
 #Escriba una función es_bisiesto() que determine si un año determinado es un año bisiesto.Un año bisiesto es divisible por 4, pero no por 100. También es divisible por 400
+
+def es_bisiesto(year):
+    año = int(year)
+    if año % 100 == 0:
+        if año % 400 == 0:
+            print(año, "es año bisiesto!!!")
+        else:
+            print(año, "no es año bisiesto!!!")
+    elif año % 4 == 0:
+        print(año, "es año bisiesto.")
+    else:
+        print(año, "no es año bisiesto!!!")
+
+es_bisiesto(2000)
