@@ -1,3 +1,5 @@
+import random
+
 #Ejercicio 1
 #Definir una función max() que tome como argumento dos números y devuelva el mayor de ellos. (Es cierto que python tiene una función max() incorporada, pero hacerla nosotros mismos es un muy buen ejercicio.
 
@@ -289,4 +291,44 @@ def es_bisiesto(year):
     else:
         print(año, "no es año bisiesto!!!")
 
-es_bisiesto(2000)
+#es_bisiesto(2000)
+
+#Ejercicio 21
+#Escribe un programa que te permita jugar a una versión simplificada del juego Master Mind. El juego consistirá en adivinar una cadena de números distintos. Al principio, el programa debe pedir la longitud de la cadena (de 2 a 9 cifras). Después el programa debe ir pidiendo que intentes adivinar la cadena de números. En cada intento, el programa informará de cuántos números han sido acertados (el programa considerará que se ha acertado un número si coincide el valor y la posición).
+
+def ran_num():
+    longitud = 0
+    a = 1
+    lista = []
+    string = ''
+    #Evalua si el número introducido está entre los parámetros del ejercicio
+    while longitud < 2 or longitud > 9:
+        longitud = int(input('Introduzca el largo de la secuencia\n(Debe ser un valor entre 2 y 9): '))
+	#En este ciclo crea la secuencia de números en una lista
+    while a <= longitud:
+        lista.append(str(a))
+        a += 1
+    #Desordena la lista de forma aleatoria
+    random.shuffle(lista)
+    #Convierte la lista en un entero
+    for i in lista:
+        string = string + i
+    return string
+
+def master_mind(alazar = str(ran_num())):
+    intentos = 1
+    coincide = 0
+    user = input('Trate de adivinar la secuencia: ')
+    while coincide < len(alazar):
+        coincide = 0
+        indice = 0
+        while indice < len(alazar):
+            if user[indice] == alazar[indice]:
+                coincide += 1
+            indice += 1
+        if coincide != len(alazar):
+            user = input('Ingresaste {0}, coincidieron {1} número(s). Intenta con otra secuencia: '.format(user, coincide))
+            intentos += 1
+    print('Lograste adivinar la secuencia en {} intentos.'.format(intentos))
+
+#master_mind()
